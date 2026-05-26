@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لـ مَلك 💖</title>
+    <style>
+        body { background-color: #ffe5ec; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; direction: rtl; text-align: center; }
+        .box { background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 25px rgba(255,105,180,0.3); width: 85%; max-width: 350px; display: none; }
+        .box.active { display: block; }
+        img { width: 100%; max-width: 220px; border-radius: 20px; margin-bottom: 15px; }
+        button { background: #ff758f; color: white; border: none; padding: 12px 30px; border-radius: 15px; cursor: pointer; font-size: 18px; margin: 10px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div id="s1" class="box active">
+    <img src="img1.png">
+    <h2>هلو مَلك 💖</h2>
+    <button onclick="next('s2')">هلوو</button>
+</div>
+
+<div id="s2" class="box">
+    <img src="img2.png">
+    <h2>مَلك عندي سؤال إلك 🫣</h2>
+    <button onclick="next('s3')">إيش هوو؟</button>
+</div>
+
+<div id="s3" class="box">
+    <img src="img3.png">
+    <h2>مستحي أسألك إياه.. 🥺</h2>
+    <button onclick="next('s4')">اسألني</button>
+</div>
+
+<div id="s4" class="box">
+    <img src="img4.png">
+    <h2> بتحبي زيد او لا؟</h2>
+    <button onclick="next('s5')">مدري</button>
+</div>
+
+<div id="s5" class="box">
+    <img src="img4.png">
+    <h2>لو بتحبيني اكبسي عالقلب 🥹👉🏻</h2>
+    <button style="font-size: 40px;" onclick="next('s6')">❤️</button>
+</div>
+
+<div id="s6" class="box">
+    <h2>كل عام وانتي أقرب انسانة لقلبي ويا عمري الله يحفظك و خليكي ديما مبسوطة لانه سعادتي لماشوف ضحكتك 💖</h2>
+    <audio id="audio" controls>
+        <source src="https://www.mboxdrive.com/Nancy%20Ajram%20-%20Ya%20Kethar.mp3" type="audio/mpeg">
+    </audio>
+    <p>إذا لم تعمل الأغنية، اضغطي على زر التشغيل (Play)</p>
+</div>
+
+<script>
+    function next(id) {
+        document.querySelector('.box.active').classList.remove('active');
+        document.getElementById(id).classList.add('active');
+        if(id == 's6') {
+            let audio = document.getElementById('audio');
+            audio.play().catch(e => console.log("User interaction required for audio"));
+        }
+    }
+</script>
+</body>
+</html>
